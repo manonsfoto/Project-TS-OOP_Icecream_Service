@@ -30,17 +30,25 @@ class IceCreamParlor implements IIceCreamService {
   }
 
   orderIceCream(flavor: string, scoops: number): string {
+    this.listFlavors();
     if (this.availableFlavorList?.includes(flavor)) {
-      const totalPrice = scoops * this.getFlavorPrice(flavor);
+      // ===== let's say, if one of the flavors is ordered 3 times, then this flavor goes sold out/ out of stock.
 
-      console.log(
-        `Your order is successfully confirmed! Flavor: ${flavor}, Scoops: ${scoops}
-        Total Price: ${totalPrice} €`
+      let orderedFlavor: IceCreamFlavor | undefined = this.flavorArr.find(
+        (ice: IceCreamFlavor) => ice.flavor === flavor
       );
+      if (orderedFlavor) {
+        orderedFlavor.orderCounter++;
+        if (orderedFlavor.orderCounter === 3) {
+          orderedFlavor.isInStock = false;
+        }
+      }
+      // ============================================
+
+      const totalPrice = scoops * this.getFlavorPrice(flavor);
 
       return `Your order is successfully confirmed!🎉 Flavor: ${flavor}, Scoops: ${scoops}, Total Price: ${totalPrice} €`;
     } else {
-      console.log(`Your order is NOT confirmed. 🥺`);
       return `Your order is NOT confirmed. 🥺`;
     }
   }

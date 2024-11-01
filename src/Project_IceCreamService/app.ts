@@ -2,27 +2,6 @@ import IceCreamParlor from "./classes/IceCreamParlor";
 
 const Eiscafe = new IceCreamParlor();
 
-Eiscafe.addNewFlavor("Matcha".toUpperCase());
-Eiscafe.addNewFlavor("Yuzu".toUpperCase());
-Eiscafe.addNewFlavor("Joghurt".toUpperCase());
-Eiscafe.addNewFlavor("Banana");
-
-Eiscafe.listFlavors();
-
-Eiscafe.removeFlavor("Banana");
-
-Eiscafe.isFlavorAvailable("Banana");
-Eiscafe.isFlavorAvailable("Mango");
-Eiscafe.isFlavorAvailable("Yuzu");
-
-Eiscafe.getFlavorPrice("Yuzu");
-
-Eiscafe.orderIceCream("Matcha", 4);
-Eiscafe.orderIceCream("Mango", 2);
-console.clear();
-
-// ===========================
-
 const iceCreamsContainer = document.querySelector(
   "#iceCreamsContainer"
 ) as HTMLElement;
