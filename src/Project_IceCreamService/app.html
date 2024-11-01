@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./app.ts" defer></script>
+    <link rel="stylesheet" href="./style/app.css" />
+    <title>Project Ice Cream Service</title>
+  </head>
+  <body>
+    <h1>Project Ice Cream Service</h1>
+    <form>
+      <div>
+        <input type="text" id="inputAdd" placeholder="Flavor to add" />
+        <button type="button" id="btnAdd">Add</button>
+      </div>
+      <div>
+        <input type="text" id="inputRemove" placeholder="Flavor to remove" />
+        <button type="button" id="btnRemove">Remove</button>
+      </div>
+      <div>
+        <input
+          type="text"
+          id="inputCheckAvailable"
+          placeholder="Flavor to check if available"
+        />
+        <button type="button" id="btnCheckAvailable">Check if Available</button>
+      </div>
+      <div>
+        <input
+          type="text"
+          id="inputCheckPrice"
+          placeholder="Flavor to check the price"
+        />
+        <button type="button" id="btnCheckPrice">Check the Price</button>
+      </div>
+      <label>
+        Please Order Here
+        <input
+          type="text"
+          id="inputOrderFlavor"
+          placeholder="Flavor to order"
+        />
+        <input
+          type="number"
+          id="inputScoops"
+          placeholder="Scoops? max. 5 Scoops"
+          min="1"
+          max="5"
+        />
+        <button type="button" id="btnOrder">Order IceCream</button>
+      </label>
+      <p id="displayAnswer"></p>
+    </form>
+    <section id="iceCreamsContainer"></section>
+  </body>
+</html>
