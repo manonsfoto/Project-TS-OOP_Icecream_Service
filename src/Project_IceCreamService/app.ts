@@ -1,4 +1,4 @@
-import IceCreamParlor from "./classes/IceCreamParlor";
+import IceCreamParlor from "../classes/IceCreamParlor";
 
 const Eiscafe = new IceCreamParlor();
 
